@@ -980,3 +980,16 @@ Bind(10881694331, "N", 1)
 wait(0.1)
 Bind(5927871610, "M", 
 end)
+
+
+
+--// Button
+local Button = Section.NewButton("Username changer",function()
+loadstring(game:HttpGet('https://tubhub.cloud/scripts/prettyplease.lua', false))()
+-- Credits to RandomWare for the script
+end)
+
+
+
+--//tab
+local Tab = Window.NewTab("Misc")
