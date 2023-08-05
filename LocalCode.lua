@@ -318,3 +318,42 @@ if not (UIS:GetFocusedTextBox()) then
  end
 end) ---KirbyX
 end)
+
+
+
+--// Button
+local Button = Section.NewButton("Slient Aim",function()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/SoftVortexOnTop4/IIIIIlllII1llll1IIIlIII/main/11IlIlIIIIIIIIIIIIIIIlI"),true))()
+end)
+
+
+
+
+
+
+--//tab
+local Tab = Window.NewTab("Main")
+
+
+--// Button
+local Button = Section.NewButton("Inf Jump",function()
+local Player = game:GetService'Players'.LocalPlayer;
+local UIS = game:GetService'UserInputService';
+
+_G.JumpHeight = 50;
+
+function Action(Object, Function) if Object ~= nil then Function(Object); end end
+
+UIS.InputBegan:connect(function(UserInput)
+    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+        Action(Player.Character.Humanoid, function(self)
+            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                Action(self.Parent.HumanoidRootPart, function(self)
+                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                end)
+            end
+        end)
+    end
+end)
+end)
+end)
