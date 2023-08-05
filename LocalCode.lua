@@ -376,6 +376,64 @@ end)
 
 
 --// Button
-local Button = Section.NewButton("Button Text",function()
--- code here
+local Button = Section.NewButton("No slowdown",function()
+local lplayer = game.Players.LocalPlayer
+
+game:GetService('RunService').Stepped:Connect(function()
+   pcall(function()
+       lplayer.Character.BodyEffects.Movement:ClearAllChildren()
+   end)
+end)
+end)
+
+
+
+
+--// Button
+local Button = Section.NewButton("Trash Talk J",function()
+local plr = game.Players.LocalPlayer
+    repeat wait() until plr.Character
+    local char = plr.Character
+
+    local garbage = {
+        "How so doggy 💦💦";
+        "Light Souls On top 👑👑";
+        "Are you even trying 💀💀";
+        "No wonder You dont have a star ⭐️⭐️";
+        "Just quit the Game lil knee guh💀🤡";
+        "Chat this cant be real🤡🤡";
+        "Just hush lil bud no one cares.🙏💀";
+        "Ok so, keep crying 😭😭";
+        "Boo hoo, I dont care knee guh💀";
+        "At this point you need this script💀💀";
+        "Clipped, Say hello to yt.🔥🔥";
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+    function TrashTalk(inputObject, gameProcessedEvent)
+        if inputObject.KeyCode == Enum.KeyCode.J and gameProcessedEvent == false then        
+            game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
+                garbage[math.random(1,#garbage)],
+                "All"
+            )
+        end
+    end
+
+    game:GetService("UserInputService").InputBegan:connect(TrashTalk)
+ 
+if combo > 45 then
+   c("0x01")
+end
+end)
 end)
