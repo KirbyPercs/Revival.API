@@ -357,3 +357,25 @@ UIS.InputBegan:connect(function(UserInput)
 end)
 end)
 end)
+
+
+
+
+--// Button
+local Button = Section.NewButton("Fling",function()
+loadstring(game:HttpGet("https://shattered-gang.lol/scripts/fe/touch_fling.lua"))()
+end)
+
+
+--// Button
+local Button = Section.NewButton("Stomp Changer",function()
+loadstring(game:HttpGet("https://scripts.luawl.com/hosted/4916/18359/DeniroHub.lua", true))()
+end)
+--Credits to 4z/Dinero Hub
+
+
+
+--// Button
+local Button = Section.NewButton("Button Text",function()
+-- code here
+end)
