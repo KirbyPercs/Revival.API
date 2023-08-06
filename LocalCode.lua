@@ -1358,3 +1358,119 @@ game:GetService("RunService").RenderStepped:Connect(LPH_JIT_MAX(function()
     end
 end))
 end,true) -- "true" is the default value of toggle
+
+
+
+--// Button
+local Button = Section.NewButton("Fly F",function()
+lua
+-- Fly Script
+
+-- Constants
+local FLY_SPEED = 150
+
+-- Variables
+local flyEnabled = false
+
+-- Function to enable or disable fly mode
+local function toggleFly()
+    flyEnabled = not flyEnabled
+    if flyEnabled then
+        -- Activate fly mode
+        game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(3)
+    else
+        -- Deactivate fly mode
+        game:GetService("Players").LocalPlayer.Character.Humanoid:ChangeState(0)
+    end
+end
+
+-- Function to handle character movement
+local function handleMovement()
+    if flyEnabled then
+        -- Detect input for flying
+        local flyInput = Vector3.new(0, 0, 0)
+        if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.W) then
+            flyInput = flyInput + Vector3.new(0, 0, -1)
+        end
+        if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.A) then
+            flyInput = flyInput + Vector3.new(-1, 0, 0)
+        end
+        if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.S) then
+            flyInput = flyInput + Vector3.new(0, 0, 1)
+        end
+        if game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.D) then
+            flyInput = flyInput + Vector3.new(1, 0, 0)
+        end
+        -- Apply the movement
+        game:GetService("Players").LocalPlayer.Character.Humanoid:MoveTo(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position + (flyInput * FLY_SPEED))
+    end
+end
+
+-- Function to handle enabling/disabling fly mode when a specific key is pressed
+local function onKeyPress(input)
+    if input.KeyCode == Enum.KeyCode.F then
+        toggleFly()
+    end
+end
+
+-- Connect the key press event
+game:GetService("UserInputService").InputBegan:Connect(onKeyPress)
+
+-- Main loop
+while true do
+    handleMovement()
+    game:GetService("RunService").Heartbeat:Wait()
+end
+end)
+
+
+
+--//Toggles
+local EnabledToggle = Section.NewToggle("Reach",function(bool)
+lua
+-- Reach Script
+
+-- Constants
+local REACH_DISTANCE = 10
+
+-- Function to activate reach mode
+local function activateReach()
+    -- Modify the player's character Humanoid properties
+    local humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid
+    humanoid.MaxHealth = math.huge
+    humanoid.WalkSpeed = math.huge
+    humanoid.JumpPower = math.huge
+    humanoid.HipHeight = math.huge
+end
+
+-- Function to handle reaching out to objects
+local function handleReach()
+    if game:GetService("UserInputService"):IsMouseButtonPressed(Enum.UserInputType.MouseButton1) then
+        -- Get the mouse position and direction
+        local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+        local mousePos = mouse.X, mouse.Y, mouse.Z
+        local mouseDir = mouse.Target and (mouse.Target.Position - mousePos).unit or Vector3.new(0, 0, 1)
+
+        -- Calculate the reach position
+        local reachPos = mousePos + mouseDir * REACH_DISTANCE
+
+        -- Perform a Raycast to detect objects in the reach path
+        local result = workspace:Raycast(mousePos, mouseDir * REACH_DISTANCE, {game:GetService("Players").LocalPlayer.Character})
+
+        if result then
+            -- An object was hit by the Raycast
+            local hitPart = result.Instance
+            print("Reached object:", hitPart.Name)
+            -- Do something with the hit object, like interacting with it or triggering an action
+            -- For example, you can use hitPart:Click() to simulate a click on the object
+        end
+    end
+end
+
+-- Main loop
+while true do
+    handleReach()
+    game:GetService("RunService").Heartbeat:Wait()
+end
+
+end,true) -- "true" is the default value of toggle
