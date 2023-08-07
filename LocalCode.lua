@@ -1474,3 +1474,35 @@ while true do
 end
 
 end,true) -- "true" is the default value of toggle
+
+
+
+--// Button
+local Button = Section.NewButton("godmode",function()
+-- Enable God Mode
+function enableGodMode()
+    local player = game:GetService("Players").LocalPlayer
+    local character = player.Character
+
+    -- Check if the player and character exist
+    if player and character then
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+        
+        -- Set the maximum health and make the player invincible
+        if humanoid then
+            humanoid.MaxHealth = math.huge
+            humanoid.Health = math.huge
+        end
+    end
+end
+
+-- Call the function to enable God Mode
+enableGodMode()
+
+-- Main program loop
+while true do
+    -- Your additional code or game logic here
+    wait(1)
+end
+
+end)
