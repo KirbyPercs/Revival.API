@@ -142,3 +142,86 @@ local Button = HomeTab:CreateButton({
    loadstring(game:HttpGet(('https://pastefy.app/Oic24KzG/raw'),true))()
    end,
 })
+
+local MainTab = Window:CreateTab("Main", nil) -- Title, Image
+local Section = MainTab:CreateSection("Main")
+
+local Button = MainTab:CreateButton({
+   Name = "Rhythm expliosion",
+   Callback = function()
+   RhythmSpam = Value
+while RhythmSpam do
+game:GetService("ReplicatedStorage").rhythmevent:FireServer("AoeExplosion",0)
+task.wait()
+end
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "godmode",
+   Callback = function()
+   if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 0)
+firetouchinterest(game.Players.LocalPlayer.Character:WaitForChild("Head"), workspace.Lobby.Teleport1.TouchInterest.Parent, 1)
+wait(0.5)
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                    if v.ClassName == "Tool" then
+                        v.Parent = game.LogService
+                    end
+                end
+game:GetService("ReplicatedStorage"):WaitForChild("HumanoidDied"):FireServer(game.Players.LocalPlayer.Character,false)
+wait(4)
+for i,v in pairs(game.LogService:GetChildren()) do
+                    if v.ClassName == "Tool" then
+                        v.Parent = game.Players.LocalPlayer.Character
+                    end
+                end
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ClassName == "Tool" then
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                    end
+                end 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Origo.CFrame
+elseif game.Players.LocalPlayer.Character:FindFirstChild("entered") then
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ClassName == "Tool" then
+                        v.Parent = game.LogService
+                    end
+                end
+game:GetService("ReplicatedStorage"):WaitForChild("HumanoidDied"):FireServer(game.Players.LocalPlayer.Character,false)
+wait(4)
+for i,v in pairs(game.LogService:GetChildren()) do
+                    if v.ClassName == "Tool" then
+                        v.Parent = game.Players.LocalPlayer.Character
+                    end
+                end
+game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                    if v.ClassName == "Tool" then
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                    end
+                end 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.Origo.CFrame
+end
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Null spam",
+   Callback = function()
+   NullSpam = Value
+while NullSpam do
+game:GetService("ReplicatedStorage").NullAbility:FireServer()
+task.wait()
+end
+   end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Cloud Spam",
+   Callback = function()
+   game:GetService("ReplicatedStorage").CloudAbility:FireServer()
+   end,
+})
