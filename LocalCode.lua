@@ -1,13 +1,13 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "LightSoulsV2 | Slap battles",
-   LoadingTitle = "LightSoulsV2",
+   Name = "Project Alpha | Slap battles",
+   LoadingTitle = "Alpha Projects",
    LoadingSubtitle = "by Shoota",
    ConfigurationSaving = {
       Enabled = false,
       FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "LightSoulsV2"
+      FileName = "ProjectV8"
    },
    Discord = {
       Enabled = true,
@@ -34,6 +34,23 @@ local Button = HomeTab:CreateButton({
    Name = "Rejoin Server",
    Callback = function()
    game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+   end,
+})
+
+local Toggle = HomeTab:CreateToggle({
+   Name = "Anti Kick",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   AntiKick = Value
+while AntiKick do
+for i,v in pairs(game.CoreGui.RobloxPromptGui.promptOverlay:GetDescendants()) do
+                    if v.Name == "ErrorPrompt" then
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+                    end
+                end
+task.wait()
+end
    end,
 })
 
@@ -125,16 +142,6 @@ local Button = HomeTab:CreateButton({
    end,
 })
 
-local Button = HomeTab:CreateButton({
-   Name = "Chat bypasser",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/synnyyy/synergy/additional/betterbypasser", true))({
-    Method = 1, -- Method 1 is the main method. Method two is emojis. Method 3 is full transparency, no special symbols. Method 3 has been improved!
-    Keybind = "F", -- Usually defaulted to F. You can change this keybind by replacing the string with a letter. Works for uppercase and lowercase.
-    ShowMethodDictionary = true -- Shows you the full list of words that you can say with the method. Press FN + F9 to see this dictionary.
-})
-   end,
-})
 
 local Button = HomeTab:CreateButton({
    Name = "My World Gui",
@@ -147,9 +154,9 @@ local MainTab = Window:CreateTab("Main", nil) -- Title, Image
 local Section = MainTab:CreateSection("Main")
 
 local Button = MainTab:CreateButton({
-   Name = "Rhythm expliosion",
-   Callback = function()
-   RhythmSpam = Value
+   Name = "Rhythm Explosion Spam",
+   Callback = function(Value)
+   RhythmSpam = true
 while RhythmSpam do
 game:GetService("ReplicatedStorage").rhythmevent:FireServer("AoeExplosion",0)
 task.wait()
@@ -210,8 +217,8 @@ end
 
 local Button = MainTab:CreateButton({
    Name = "Null spam",
-   Callback = function()
-   NullSpam = Value
+   Callback = function(Value)
+  NullSpam = true
 while NullSpam do
 game:GetService("ReplicatedStorage").NullAbility:FireServer()
 task.wait()
@@ -224,5 +231,19 @@ local Button = MainTab:CreateButton({
    Callback = function()
    game:GetService("ReplicatedStorage").CloudAbility:FireServer()
    end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Rojo Spam",
+   Callback = function()
+if Person == nil then
+Person = game.Players.LocalPlayer.Name
+end
+RojoSpam = true
+while RojoSpam do
+game:GetService("ReplicatedStorage"):WaitForChild("RojoAbility"):FireServer("Release", {game.Players[Person].Character.HumanoidRootPart.CFrame})
+task.wait()
+end
+end,
 })
 
