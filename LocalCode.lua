@@ -153,10 +153,12 @@ local Button = HomeTab:CreateButton({
 local MainTab = Window:CreateTab("Main", nil) -- Title, Image
 local Section = MainTab:CreateSection("Main")
 
-local Button = MainTab:CreateButton({
+local Toggle = MainTab:CreateToggle({
    Name = "Rhythm Explosion Spam",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-   RhythmSpam = true
+  RhythmSpam = Value
 while RhythmSpam do
 game:GetService("ReplicatedStorage").rhythmevent:FireServer("AoeExplosion",0)
 task.wait()
@@ -215,10 +217,12 @@ end
    end,
 })
 
-local Button = MainTab:CreateButton({
+local Toggle = MainTab:CreateToggle({
    Name = "Null spam",
+   CurrentValue = false,
+   Flag = "Toggle3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
    Callback = function(Value)
-  NullSpam = true
+   NullSpam = Value
 while NullSpam do
 game:GetService("ReplicatedStorage").NullAbility:FireServer()
 task.wait()
@@ -226,24 +230,27 @@ end
    end,
 })
 
-local Button = MainTab:CreateButton({
-   Name = "Cloud Spam",
-   Callback = function()
-   game:GetService("ReplicatedStorage").CloudAbility:FireServer()
-   end,
-})
-
-local Button = MainTab:CreateButton({
+local Toggle = MainTab:CreateToggle({
    Name = "Rojo Spam",
-   Callback = function()
-if Person == nil then
+   CurrentValue = false,
+   Flag = "Toggle2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   if Person == nil then
 Person = game.Players.LocalPlayer.Name
 end
-RojoSpam = true
+RojoSpam = Value
 while RojoSpam do
 game:GetService("ReplicatedStorage"):WaitForChild("RojoAbility"):FireServer("Release", {game.Players[Person].Character.HumanoidRootPart.CFrame})
 task.wait()
 end
-end,
+   end,
 })
 
+local Section = MainTab:CreateSection("Cloud")
+
+local Button = MainTab:CreateButton({
+   Name = "Cloud Spawn",
+   Callback = function()
+   game:GetService("ReplicatedStorage").CloudAbility:FireServer()
+   end,
+})
