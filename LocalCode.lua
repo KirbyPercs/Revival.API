@@ -133,6 +133,13 @@ local Button = HomeTab:CreateButton({
    end,
 })
 
+local Button = HomeTab:CreateButton({
+   Name = "Destroy Gui",
+   Callback = function()
+   Rayfield:Destroy()
+   end,
+})
+
 local Section = HomeTab:CreateSection("Useful Scripts")
 
 local Button = HomeTab:CreateButton({
@@ -246,7 +253,7 @@ end
    end,
 })
 
-local Section = MainTab:CreateSection("Cloud")
+local Section = MainTab:CreateSection("Spawn")
 
 local Button = MainTab:CreateButton({
    Name = "Cloud Spawn",
