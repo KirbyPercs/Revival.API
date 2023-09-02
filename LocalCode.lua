@@ -348,9 +348,9 @@ local Button = AnimationsTab:CreateButton({
    end,
 })
 
-local Button = Tab:CreateButton({
+local Button = AnimationsTab:CreateButton({
    Name = "FE Animations",
-   Callback Function()
+   Callback = function()
    local Energize = Instance.new("ScreenGui")
 local SideFrame = Instance.new("Frame")
 local OpenGUI = Instance.new("TextButton")
@@ -2069,6 +2069,11 @@ FlingArms.MouseButton1Click:connect(function()
 		track:Stop()
 		FlingArms.BackgroundColor3 = rcol
 	end
+end)
+ 
+-- Finished update!
+end,
+})
 end)
  
 -- Finished update!
