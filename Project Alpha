@@ -161,6 +161,30 @@ local MainTab = Window:CreateTab("Main", nil) -- Title, Image
 local Section = MainTab:CreateSection("Main")
 
 local Toggle = MainTab:CreateToggle({
+   Name = "Slap Arua",
+   CurrentValue = false,
+   Flag = "Toggle80", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+  SlapAura = Value
+                while SlapAura do
+for i,v in pairs(game.Players:GetChildren()) do
+                    if v ~= game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and v.Character then
+if v.Character:FindFirstChild("entered") and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("rock") == nil and v.Character.HumanoidRootPart.BrickColor ~= BrickColor.new("New Yeller") then
+if v.Character.Head:FindFirstChild("UnoReverseCard") == nil or game.Players.LocalPlayer.leaderstats.Glove == "Error" then
+Magnitude = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude
+                        if 25 >= Magnitude then
+shared.gloveHits[game.Players.LocalPlayer.leaderstats.Glove.Value]:FireServer(v.Character:WaitForChild("Head"),true)
+                    end
+end
+end
+end
+                end
+task.wait()
+end
+   end,
+})
+
+local Toggle = MainTab:CreateToggle({
    Name = "Rhythm Explosion Spam",
    CurrentValue = false,
    Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
@@ -2638,8 +2662,8 @@ end
 })
 
 local Button = MiscTab:CreateButton({
-   Name = "Slapple Farm",
+   Name = "Slapple Farm (copies the script, put on autoexe)",
    Callback = function()
-   loadstring(game:HttpGet('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Farm'))()
+   setclipboard("loadstring(game:HttpGet('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Farm'))()")
    end,
 })
