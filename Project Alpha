@@ -2636,3 +2636,10 @@ task.wait()
 end
    end,
 })
+
+local Button = MiscTab:CreateButton({
+   Name = "Slapple Farm",
+   Callback = function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Farm'))()
+   end,
+})
