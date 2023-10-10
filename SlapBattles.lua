@@ -1,3 +1,4 @@
+if _G.legitscript == false then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/KirbyPercs/ShootasWrld/main/Bypass"))()
 else
 if _G.legitscript == true then
