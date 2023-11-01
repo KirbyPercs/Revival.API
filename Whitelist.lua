@@ -1,9 +1,9 @@
-local ejfgbdjs = game.Players
-local SDIKjFNIEJSMNFdiks = {
+local HWIDTable = loadstring(game:HttpGet("https://pastebin.com/raw/m2e6NXsG"))()
+local HWID = game:GetService("RbxAnalyticsService")GetClientId()
+for i,v in pairs(HWIDTable) do
+    if v == HWID then
 
-  }
-  if SDIKjFNIEJSMNFdiks[table.find(SDIKjFNIEJSMNFdiks,game:GetService("RbxAnalyticsService"):GetClientId())] == game:GetService("RbxAnalyticsService"):GetClientId() then
-    script(loadstring(game:HttpGet("https://raw.githubusercontent.com/KirbyPercs/ShootasWrld/main/BulletWareV4"))())
-    else
-    ejfgbdjs.LocalPlayer:Kick("Player not Whitelisted")
+  else
+  game:GetService("Players").LocalPlayer:Kick("Player not whitelisted")
+    end
 end
