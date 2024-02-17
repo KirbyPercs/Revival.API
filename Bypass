@@ -36,5 +36,5 @@ if game.PlaceId == 6403373529 or game.PlaceId == 11520107397 or game.PlaceId == 
  
      if game.PlaceId == 6403373529 then
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/KirbyPercs/ShootasWrld/main/BulletWareV4"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KirbyPercs/OniShield.api/main/OniShield.lua/NebXFile%3B8273827382638163.txt"))()
 end
