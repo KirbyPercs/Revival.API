@@ -1,3 +1,5 @@
+-- the fact this isn obf yet is tragic
+-- lucid was here :3
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
