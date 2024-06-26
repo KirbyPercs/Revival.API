@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "Revival IX | Slap Battles",
+   Name = "Revival IX🕊 | Slap Battles",
    LoadingTitle = "Best SB Script",
    LoadingSubtitle = "by lokz temper, lokz drastic & lucidReborn",
    ConfigurationSaving = {
