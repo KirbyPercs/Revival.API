@@ -1,13 +1,13 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-   Name = "BulletWareV4 | Legit Script",
-   LoadingTitle = "BulletWareV4",
-   LoadingSubtitle = "by ShootaPercs",
+   Name = "Revival IX | Legit Script",
+   LoadingTitle = "SB legit script",
+   LoadingSubtitle = "by lokz temper, lokz drastic & lucidReborn",
    ConfigurationSaving = {
       Enabled = true,
       FolderName = nil, -- Create a custom folder for your hub/game
-      FileName = "BulletWare"
+      FileName = "admin.nebx.gg/file/91092183012001"
    },
    Discord = {
       Enabled = true,
@@ -16,13 +16,13 @@ local Window = Rayfield:CreateWindow({
    },
    KeySystem = false, -- Set this to true to use our key system
    KeySettings = {
-      Title = "Untitled",
+      Title = "Revival IX | Key System",
       Subtitle = "Key System",
-      Note = "No method of obtaining the key is provided",
-      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      Note = "Same key as the main script",
+      FileName = "admin.nebx.gg/file/91092183012001", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+      Key = {"hope4bashful"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
 })
 local HomeTab = Window:CreateTab("Home", nil) -- Title, Image
