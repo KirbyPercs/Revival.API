@@ -1,5 +1,33 @@
 -- the fact this isn obf yet is tragic
 -- lucid was here :3
+
+local runService = game:GetService("RunService")
+local workspace = game:GetService("Workspace")
+local players = game:GetService("Players")
+local localPlayer = players.LocalPlayer
+local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+local UserInputService = game:GetService("UserInputService")
+local replicatedStorage = game:GetService("ReplicatedStorage")
+
+
+local function onCharacterAdded(newCharacter)
+    character = newCharacter
+end
+
+localPlayer.CharacterAdded:Connect(onCharacterAdded)
+
+local function isPlayerOnMobile()
+    return UserInputService.TouchEnabled and not (UserInputService.KeyboardEnabled or UserInputService.GamepadEnabled)
+end
+
+local Rayfield
+
+if isPlayerOnMobile() then
+    Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3AArrayfield%20Library'))()
+else
+    Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+end
+
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
